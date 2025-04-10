@@ -15,15 +15,13 @@ jobs:
         run: |
           echo "Last updated at $(date)" > last-updated.txt
 
-      - name: Commit changes and push using PAT
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+      - name: Commit changes and push using GITHUB_TOKEN
         run: |
           git config user.name "vamsi-convertedgetech"
           git config user.email  "vamsib@convertedgetech.com"
           git add last-updated.txt
           git commit -m "Auto update timestamp"
-          git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Trigger Webhook
         run: |
