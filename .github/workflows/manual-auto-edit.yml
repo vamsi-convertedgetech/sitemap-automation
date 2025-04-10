@@ -19,8 +19,8 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "vamsi-convertedgetech"
+          git config user.email  "vamsib@convertedgetech.com"
           git add last-updated.txt
           git commit -m "Auto update timestamp"
           git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git
