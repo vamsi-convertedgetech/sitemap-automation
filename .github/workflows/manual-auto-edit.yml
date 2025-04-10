@@ -21,8 +21,8 @@ jobs:
 
       - name: Commit changes and push using GITHUB_TOKEN
         run: |
-          git config user.name "vamsi-convertedgetech"
-          git config user.email "vamsib@convertedgetech.com"
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
           git add last-updated.txt
           git commit -m "Auto update timestamp"
           git push
